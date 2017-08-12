@@ -14,6 +14,11 @@
     {!! Form::select('team_id_right', $listTeams, null, ['placeholder' => 'Choisir une équipe', 'class' => 'form-control']); !!}
     <small class="text-danger">{{ $errors->first('team_id_right') }}</small>
 </div>
+<div class="form-group">
+    {!! Form::label('session_id', 'Session : ') !!}
+    {!! Form::select('session_id', $listSessions, null, ['placeholder' => 'Choisir une session', 'class' => 'form-control']); !!}
+    <small class="text-danger">{{ $errors->first('session_id') }}</small>
+</div>
 <div class="form">
     {!! Form::label('offTransfer', 'Transfert officiel : ') !!}
     {!! Form::checkbox('offTransfer', 1, null, ['id' => 'offTransfer']) !!}

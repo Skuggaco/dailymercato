@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\SessionRequest;
 use App\Models\Session;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
 {
     private $redirectLink = 'Backend\SessionsController@index';
 
+    /**
+     * Show all sessions
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(){
         $sessions = Session::orderBy('on_going', 'desc')
                                 ->orderBy('start_at', 'desc')
@@ -22,11 +26,22 @@ class SessionsController extends Controller
 
     }
 
+    /**
+     * Create a session
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create(){
         $listYears = $this->listYears();
         return view('admin.sessions.create', compact('listYears'));
     }
 
+    /**
+     * Store a session
+     *
+     * @param SessionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(SessionRequest $request){
         $session = new Session;
         $session = $this->saveSession($request, $session);
@@ -35,6 +50,12 @@ class SessionsController extends Controller
         return redirect()->action($this->redirectLink);
     }
 
+    /**
+     * Edit a session
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id){
         $session = Session::find($id);
         $listYears = $this->listYears();
@@ -47,6 +68,13 @@ class SessionsController extends Controller
         return view('admin.sessions.edit', compact('session', 'listYears'));
     }
 
+    /**
+     * Update a session
+     *
+     * @param $id
+     * @param SessionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update($id, SessionRequest $request){
         $session = Session::find($id);
         $session = $this->saveSession($request, $session);
@@ -55,6 +83,12 @@ class SessionsController extends Controller
         return redirect()->action($this->redirectLink);
     }
 
+    /**
+     * Delete a session
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id){
         $session = Session::find($id);
         flash('La session "'.$session->nameSession.'" a été supprimée avec succès')->success();
@@ -62,6 +96,11 @@ class SessionsController extends Controller
         return redirect()->action($this->redirectLink);
     }
 
+    /**
+     * Create a list of years
+     *
+     * @return array
+     */
     private function listYears(){
         $listYears = [];
         $year = date('Y');
@@ -71,6 +110,13 @@ class SessionsController extends Controller
         return $listYears;
     }
 
+    /**
+     * Handle the saving of the session
+     *
+     * @param $request
+     * @param $session
+     * @return mixed
+     */
     private function saveSession($request, $session){
         if($request->dateSession == 'winter'){
             $session->start_at = $request->yearSession."-01-01 00:00:00";

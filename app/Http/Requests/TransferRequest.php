@@ -24,8 +24,9 @@ class TransferRequest extends FormRequest
     public function rules()
     {
         return [
-            'player_id' => 'required',
-            'team_id_right' => 'required'
+            'player_id'     => 'required',
+            'team_id_right' => 'required',
+            'session_id'    => 'required',
         ];
     }
 }

@@ -32,4 +32,8 @@ class Session extends Model
             ]
         ];
     }
+
+    public function transfers(){
+        return $this->hasMany('App\Models\Transfer');
+    }
 }

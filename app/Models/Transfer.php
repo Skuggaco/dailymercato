@@ -13,7 +13,8 @@ class Transfer extends Model
         'offTransfer',
         'amountTransfer',
         'linkTransfer',
-        'activeTransfer'
+        'activeTransfer',
+        'session_id',
     ];
 
     public function teams(){
@@ -23,6 +24,10 @@ class Transfer extends Model
     
     public function player(){
         return $this->belongsTo('App\Models\Player');
+    }
+
+    public function session(){
+        return $this->belongsTo('App\Models\Session');
     }
 
     public function getAmountAttribute(){

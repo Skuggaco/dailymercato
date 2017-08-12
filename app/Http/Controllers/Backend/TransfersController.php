@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\TransferRequest;
 use App\Models\Player;
+use App\Models\Session;
 use App\Models\Team;
 use App\Models\Transfer;
 use App\Http\Controllers\Controller;
@@ -45,7 +46,19 @@ class TransfersController extends Controller
             $listTeams = array_add($listTeams, $t->id, $t->getFullNameTeamAttribute());
         }
 
-        return view('admin.transfers.create', compact('listPlayers', 'listTeams'));
+        $sessions = Session::orderBy('on_going', 'desc')
+                                ->orderBy('start_at', 'desc')
+                                ->get();
+        $listSessions = [];
+        foreach ($sessions as $s) {
+            if($s->on_going == 1){
+                $listSessions = array_add($listSessions, $s->id, $s->nameSession.' (Actuel)');
+            } else {
+                $listSessions = array_add($listSessions, $s->id, $s->nameSession);
+            }
+        }
+
+        return view('admin.transfers.create', compact('listPlayers', 'listTeams', 'listSessions'));
     }
 
     /**
@@ -113,7 +126,10 @@ class TransfersController extends Controller
         $listTeams = array_add($listTeams, $team->id, $team->getFullNameTeamAttribute());
         $transfer->team_id_right = $team->id;
 
-        return view('admin.transfers.edit', compact('transfer','listPlayers', 'listTeams'));
+        $session = $transfer->session;
+        $listSessions = [];
+        $listSessions = array_add($listSessions, $session->id, $session->nameSession);
+        return view('admin.transfers.edit', compact('transfer','listPlayers', 'listTeams', 'listSessions'));
     }
 
     /**
@@ -166,6 +182,7 @@ class TransfersController extends Controller
         $send->amountTransfer = $r['amountTransfer'];
         $send->linkTransfer = $r['linkTransfer'];
         $send->activeTransfer = 1;
+        $send->session_id = $r['session_id'];
         $send->save();
 
         if(!$updating) {
@@ -180,8 +197,11 @@ class TransfersController extends Controller
             $t->update();
         }
 
+        // Get the id of the old team
         $id = $player->teams->first()->id;
+        // Change the activity of the current team to make it old
         $player->teams()->updateExistingPivot($id, ['activity' => 0]);
+        // Attach the new team with the player
         $player->teams()->attach($r['team_id_right'], ['activity' => 1]);
 
         if(isset($r['contractPlayer'])){
