@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         @foreach($sessions as $k => $s)
-            <tr>
+            <tr @if($s->on_going == 1) class="on_going" @endif>
                 <td class="text-center">{{ $k+1 }}</td>
                 <td>{{ $s->nameSession }}</td>
                 @include ('admin.partials.action', ['controller' => 'SessionsController', 'id' => $s->id])

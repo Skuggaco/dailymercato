@@ -23,7 +23,7 @@ class LeaguesController extends Controller
                         ->select('leagues.*', 'countries.*', 'leagues.id as id')
                         ->orderBy('countries.nameCountry', 'asc')
                         ->orderBy('leagues.nameLeague', 'asc')
-                        ->paginate(2);
+                        ->paginate(20);
         return view('admin.leagues.index', compact('leagues'));
     }
 

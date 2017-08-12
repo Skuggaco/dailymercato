@@ -35,7 +35,8 @@ div.alert{ margin-top: 10px; }
 .text-green{ color: #00ff00; }
 .table tbody tr th{ font-weight: normal; }
 
-#offTransfer{ margin-top:0px; width: 21px; height: 22px; vertical-align: middle; }
+#offTransfer, .checkboxOnGoing{ margin-top:0px; width: 21px; height: 22px; vertical-align: middle; }
 .hide-transfer{ display: none; }
 
 .inactive{ background-color: rgba(255, 118, 86, 0.38); }
+.on_going{ background: rgba(0, 255, 54, 0.38); }
