@@ -13,6 +13,7 @@
             <th>Joueur</th>
             <th>Équipe départ</th>
             <th>Équipe arrivée</th>
+            <th>Session</th>
             <th>Montant</th>
             <th>Action</th>
         </tr>
@@ -37,6 +38,7 @@
                             {{ $teamRight->getFullNameTeamAttribute() }}
                         </a>
                     </th>
+                    <th>{{ $transfer->session->nameSession }}</th>
                     <th>{{ $transfer->getTreatAmountAttribute() }}</th>
                     @include ('admin.partials.action', ['controller' => 'TransfersController', 'id' => $transfer->id])
                 </tr>

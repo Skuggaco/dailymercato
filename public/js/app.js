@@ -49,6 +49,12 @@ $(document).ready(function(){
     if($('#offTransfer').is(':checked')){
         $(".hide-transfer").toggle();
     }
+
+    $('#chooseTeam').on("change",function(){
+        $(".hide-choose_team").toggle();
+        $('#offTransfer').attr("checked", !$('#offTransfer').attr("checked"));
+        $('.hide-transfer').toggle();
+    });
 });
 
 $('div.alert').not('.alert-important').delay(3000).fadeOut(350);

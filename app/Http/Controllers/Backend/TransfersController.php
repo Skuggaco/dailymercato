@@ -74,13 +74,15 @@ class TransfersController extends Controller
         $transfer = DB::table('transfers')
                         ->join('team_transfer as a', 'a.transfer_id', 'transfers.id')
                         ->join('team_transfer as b', 'b.transfer_id', 'transfers.id')
+                        ->join('sessions as s', 's.id', 'transfers.session_id')
                         ->where('a.team_id', '=', $player->teams->first()->id)
                         ->where('a.left', '=', 1)
                         ->where('b.team_id', '=', $r['team_id_right'])
                         ->where('b.left', '=', 0)
                         ->where('transfers.player_id', '=', $player->id)
+                        ->where('s.id', '=', $r['session_id'])
                         ->select('*')->get();
-        if($player->teams->first()->id == $r['team_id_right']){
+        if($player->teams->first()->id == $r['team_id_right'] && !isset($r['team_id_left'])){
             flash('L\'équipe de départ ne peut pas être la même que celle d\'arrivée')->error();
             return redirect()->action('Backend\TransfersController@create');
         }
@@ -93,6 +95,7 @@ class TransfersController extends Controller
             } else {
                 $send->offTransfer = 0;
                 $send->activeTransfer = 1;
+                $send->session_id = $r['session_id'];
                 $send->save();
                 $send->teams()->attach($player->teams->first()->id, ['left' => 1]);
                 $send->teams()->attach($r['team_id_right'], ['left' => 0]);
@@ -117,7 +120,7 @@ class TransfersController extends Controller
                                 ->first();
 
 
-        $player = Player::find($transfer->player_id);
+        $player = Player::newTeam($r['player_id'])->first();
         $listPlayers = [];
         $listPlayers = array_add($listPlayers, $player->id, $player->getFullNameAttribute());
 
@@ -186,23 +189,56 @@ class TransfersController extends Controller
         $send->save();
 
         if(!$updating) {
-            $send->teams()->attach($player->teams->first()->id, ['left' => 1]);
+            if(isset($r['team_id_left'])){
+                $send->teams()->attach($r['team_id_left'], ['left' => 1]);
+            } else {
+                $send->teams()->attach($player->teams->first()->id, ['left' => 1]);
+            }
             $send->teams()->attach($r['team_id_right'], ['left' => 0]);
         }
         $transfers = Transfer::where('player_id', '=', $r['player_id'])
                         ->where('id', '!=', $send->id)
+                        ->where('session_id', '=', $r['session_id'])
                         ->get();
         foreach($transfers as $t){
             $t->activeTransfer = 0;
             $t->update();
         }
 
-        // Get the id of the old team
-        $id = $player->teams->first()->id;
-        // Change the activity of the current team to make it old
-        $player->teams()->updateExistingPivot($id, ['activity' => 0]);
-        // Attach the new team with the player
-        $player->teams()->attach($r['team_id_right'], ['activity' => 1]);
+        if(isset($r['team_id_left'])){
+            $isTeamExistLeft = Team::whereHas('players', function($query) use ($r, $player) {
+                $query->where('player_id', '=', $player->id)
+                      ->where('team_id', '=', $r['team_id_left']);
+            })->get();
+            $isTeamExistRight = Team::whereHas('players', function($query) use ($r, $player) {
+                $query->where('player_id', '=', $player->id)
+                    ->where('team_id', '=', $r['team_id_right']);
+            })->get();
+            if($isTeamExistLeft->isEmpty()){
+                $player->teams()->attach($r['team_id_left'], ['activity' => 0]);
+            }
+            if($isTeamExistRight->isEmpty()){
+                $player->teams()->attach($r['team_id_right'], ['activity' => 0]);
+            }
+        } else {
+            // Get the id of the old team
+            $id = $player->teams->first()->id;
+            // Change the activity of the current team to make it old
+
+            $player->teams()->updateExistingPivot($id, ['activity' => 0]);
+            // Attach the new team with the player
+
+            $isTeamExist = Team::whereHas('players', function($query) use ($r, $player) {
+                $query->where('player_id', '=', $player->id)
+                    ->where('team_id', '=', $r['team_id_right']);
+            })->get();
+
+            if($isTeamExist->isEmpty()) {
+                $player->teams()->attach($r['team_id_right'], ['activity' => 1]);
+            } else{
+                $player->teams()->updateExistingPivot($r['team_id_right'], ['activity' => 1]);
+            }
+        }
 
         if(isset($r['contractPlayer'])){
             $player->contractPlayer = $r['contractPlayer'];
