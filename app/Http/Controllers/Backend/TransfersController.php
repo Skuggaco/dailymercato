@@ -120,7 +120,7 @@ class TransfersController extends Controller
                                 ->first();
 
 
-        $player = Player::newTeam($r['player_id'])->first();
+        $player = Player::newTeam($transfer->player_id)->first();
         $listPlayers = [];
         $listPlayers = array_add($listPlayers, $player->id, $player->getFullNameAttribute());
 

@@ -1,12 +1,18 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    @include ('admin.partials.title', [
-            'title'      => 'Transferts',
-            'controller' => 'TransfersController',
-            'add'        => 'un transfert ou une rumeur'])
+@section('name_page')
+    Transferts
+@endsection
 
-    <table class = "table table-bordered table-responsive">
+@section('content')
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Tableau des transferts</h3>
+            <div class="box-tools">
+                <a href="{{ action('Backend\TransfersController@create') }}" class="btn btn-sm btn-primary">Ajouter</a>
+            </div>
+        </div>
+    <table class = "table table-striped table-bordered table-responsive">
         <thead>
         <tr>
             <th class="text-center">Date</th>
@@ -45,6 +51,6 @@
             @endforeach
         </tbody>
     </table>
-
+    </div>
     {{ $transfers->links() }}
 @endsection

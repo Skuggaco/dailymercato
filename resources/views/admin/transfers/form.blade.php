@@ -1,3 +1,5 @@
+<div class="box-body">
+
 <div class="form-group">
     {!! Form::label('player_id', 'Joueur : ') !!}
     {!! Form::select('player_id', $listPlayers, null, ['placeholder' => 'Choisir un joueur', 'class' => 'form-control']); !!}
@@ -6,9 +8,11 @@
 
 
 @if(!isset($transfer))
-<div class="form-group">
-    {!! Form::label('choose_team', 'Ancien transfert officiel : ') !!}
-    {!! Form::checkbox('choose_team', 1, null, ['id' => 'chooseTeam', 'class' => 'cbox']) !!}
+<div class="checkbox">
+    <label>
+        {!! Form::checkbox('choose_team', 1, null, ['id' => 'chooseTeam', 'class' => '']) !!}
+        Ancien transfert officiel
+    </label>
 </div>
 <div class="form-group hide-choose_team">
     {!! Form::label('team_id_left', 'Équipe départ : ') !!}
@@ -35,9 +39,11 @@
     {!! Form::select('session_id', $listSessions, null, ['class' => 'form-control']); !!}
     <small class="text-danger">{{ $errors->first('session_id') }}</small>
 </div>
-<div class="form">
-    {!! Form::label('offTransfer', 'Transfert officiel : ') !!}
+<div class="checkbox">
+    <label>
     {!! Form::checkbox('offTransfer', 1, null, ['id' => 'offTransfer']) !!}
+    Transfert officiel
+    </label>
     <small class="text-danger">{{ $errors->first('offTransfer') }}</small>
 </div>
 <div class="form-group hide-transfer">
@@ -55,6 +61,10 @@
     {!! Form::date('contractPlayer', null, ['class' => 'form-control']) !!}
     <small class="text-danger">{{ $errors->first('contractPlayer') }}</small>
 </div>
-<div class = "form-group">
+
+
+</div>
+
+<div class="box-footer">
     {!! Form::submit($submitText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
