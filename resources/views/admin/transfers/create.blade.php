@@ -1,14 +1,10 @@
 @extends('admin.layouts.app')
 
-@section('name_page')
-    Ajouter transferts
-@endsection
+@section('name_page', 'Ajouter transferts')
 
 @section('content')
     <div class="box box-primary">
-        <div class="box-header">
-            <h3 class="box-title">Ajouter un transfert ou une rumeur</h3>
-        </div>
+        @include ('admin.partials.formTitle', ['title' => 'Ajouter un transfert ou une rumeur'])
         {!! Form::open(['action' => 'Backend\TransfersController@store']) !!}
             @include('admin.transfers.form', ['submitText' => 'Ajouter transfert'])
         {!! Form::close() !!}

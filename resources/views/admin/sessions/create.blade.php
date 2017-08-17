@@ -1,8 +1,12 @@
 @extends('admin.layouts.app')
 
+@section('name_page', 'Ajouter session')
+
 @section('content')
-    <h1>Ajouter une session</h1>
-    {!! Form::open(['action' => 'Backend\SessionsController@store']) !!}
-        @include('admin.sessions.form', ['submitText' => 'Ajouter session'])
-    {!! Form::close() !!}
+    <div class="box box-primary">
+        @include ('admin.partials.formTitle', ['title' => 'Ajouter session'])
+        {!! Form::open(['action' => 'Backend\SessionsController@store']) !!}
+            @include('admin.sessions.form', ['submitText' => 'Ajouter session'])
+        {!! Form::close() !!}
+    </div>
 @endsection

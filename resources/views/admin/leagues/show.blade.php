@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    <h1>{{ $league->nameLeague }}</h1>
+@section('name_page', $league->nameLeague)
 
+@section('content')
     <h2>Pays associé :</h2>
 
     <ul class="list-group">

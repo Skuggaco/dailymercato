@@ -20,7 +20,7 @@ h1{ margin-top: 10px; }
 .flag{ width: 22px; height: 15px; margin-right: 5px; }
 .logo{ width: 20px; height: 26px; margin-right: 5px; }
 
-.tr-colored{ background: rgba(0, 0, 0, 0.02); color: #000; }
+.tr-colored{ background: rgba(118, 163, 183, 0.12); color: #000; }
 
 .classAjax, .classHide{ cursor: pointer; }
 .classAjax:hover, .classHide:hover{ background: rgba(0, 0, 0, 0.03); }
@@ -40,3 +40,4 @@ div.alert{ margin-top: 10px; }
 
 .inactive{ background-color: rgba(255, 118, 86, 0.38); }
 .on_going{ background: rgba(0, 255, 54, 0.38); }
+.title-marg{ margin-left: 5px; }

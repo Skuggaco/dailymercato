@@ -1,11 +1,11 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    <h1>
-        <img src="/storage/{{ $country->imgCountry }}" alt="" class="flag">
-        {{ $country->nameCountry }}
-    </h1>
+@section('name_page')
+    <img src="/storage/{{ $country->imgCountry }}" alt="" class="flag">
+    {{ $country->nameCountry }}
+@endsection
 
+@section('content')
     <h2>Ligue(s) associé(s) : </h2>
     <ul class="list-group">
         @if(!empty($leagues))

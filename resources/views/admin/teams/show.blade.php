@@ -1,11 +1,11 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    <h1>
-        <img src="/storage/{{ $team->imgTeam }}" alt="" class="logo">
-        {{ $team->nameLongTeam }} ({{ $team->nameTeam }})
-    </h1>
+@section('name_page')
+    <img src="/storage/{{ $team->imgTeam }}" alt="" class="logo">
+    {{ $team->nameLongTeam }} ({{ $team->nameTeam }})
+@endsection
 
+@section('content')
     <h2>Ligue associée :</h2>
 
     <ul class="list-group">
