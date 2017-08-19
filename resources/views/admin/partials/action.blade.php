@@ -8,7 +8,7 @@
     </div>
     <div class="col-xs-9">
     {{ Form::open([ 'method'  => 'delete', 'action' => ['Backend\\'.$controller.'@destroy', $id] ]) }}
-        {{ Form::submit('Supprimer', ['class' => 'btn btn-sm btn-danger btn-delete delete']) }}
+        {{ Form::submit('Supprimer', ['class' => 'btn btn-xs btn-danger btn-delete delete']) }}
     {{ Form::close() }}
     </div>
 </td>

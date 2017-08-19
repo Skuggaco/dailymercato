@@ -6,6 +6,7 @@
     <title>AdminLTE 2 | Starter</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skin-blue.css') }}">
     <link rel="stylesheet" href="{{ asset('css/_all-skins.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all-check-skins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 

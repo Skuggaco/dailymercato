@@ -1,11 +1,19 @@
 @extends('admin.layouts.app')
 
 @section('name_page')
-    <i class="fa fa-exchange"></i> <span class="title-marg">Transferts</span>
+    @if(app('request')->input('type') == 'rumours')
+        <i class="fa fa-comments"></i> <span class="title-marg">Rumeurs</span>
+    @else
+        <i class="fa fa-exchange"></i> <span class="title-marg">Transferts</span>
+    @endif
 @endsection
 @section('content')
     <div class="box box-primary">
-        @include ('admin.partials.tableTitle', ['title' => 'transferts', 'controller' => 'Transfers'])
+        @if(app('request')->input('type') == 'rumours')
+            @include ('admin.partials.tableTitle', ['title' => 'rumeurs', 'controller' => 'Transfers'])
+        @else
+            @include ('admin.partials.tableTitle', ['title' => 'transferts', 'controller' => 'Transfers'])
+        @endif
         <div class="box-body">
             <table class = "table table-striped table-bordered table-responsive">
                 <thead>

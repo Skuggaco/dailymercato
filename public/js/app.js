@@ -43,18 +43,25 @@ $(document).ready(function(){
     });
 
     // Cacher/affiché l'input montant si on clique sur le checkbox officiel
-    $('#offTransfer').on("change",function(){
+    $('#off').on("ifChanged",function(){
         $(".hide-transfer").toggle();
     });
-    if($('#offTransfer').is(':checked')){
+    if($('#off').is(':checked')){
         $(".hide-transfer").toggle();
     }
 
-    $('#chooseTeam').on("change",function(){
+    $('#choose').on('ifChanged', function(){
         $(".hide-choose_team").toggle();
-        $('#offTransfer').attr("checked", !$('#offTransfer').attr("checked"));
-        $('.hide-transfer').toggle();
+        $('#off').iCheck('toggle');
     });
+    $('select').select2();
+
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square',
+        radioClass: 'iradio_square',
+        increaseArea: '0%'
+    });
+
 });
 
 $('div.alert').not('.alert-important').delay(3000).fadeOut(350);

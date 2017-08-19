@@ -4,13 +4,12 @@
         {!! Form::select('player_id', $listPlayers, null, ['placeholder' => 'Choisir un joueur', 'class' => 'form-control']); !!}
         <small class="text-danger">{{ $errors->first('player_id') }}</small>
     </div>
-
     @if(!isset($transfer))
+    <div id="chooseTeam">
     <div class="checkbox">
-        <label>
-            {!! Form::checkbox('choose_team', 1, null, ['id' => 'chooseTeam', 'class' => '']) !!}
-            Ancien transfert officiel
-        </label>
+            {!! Form::checkbox('choose_team', 1, null, ['id' => 'choose', 'class' => '']) !!}
+        <label for="choose">Ancien transfert officiel</label>
+    </div>
     </div>
     <div class="form-group hide-choose_team">
         {!! Form::label('team_id_left', 'Équipe départ : ') !!}
@@ -37,11 +36,9 @@
         {!! Form::select('session_id', $listSessions, null, ['class' => 'form-control']); !!}
         <small class="text-danger">{{ $errors->first('session_id') }}</small>
     </div>
-    <div class="checkbox">
-        <label>
-        {!! Form::checkbox('offTransfer', 1, null, ['id' => 'offTransfer']) !!}
-        Transfert officiel
-        </label>
+    <div class="checkbox" id="offTransfer">
+        {!! Form::checkbox('offTransfer', 1, null, ['id' => 'off']) !!}
+        <label for="off">Transfert officiel</label>
         <small class="text-danger">{{ $errors->first('offTransfer') }}</small>
     </div>
     <div class="form-group hide-transfer">

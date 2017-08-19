@@ -16,6 +16,7 @@ class CreateTransfersTable extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('player_id')->unsigned();
+            $table->integer('session_id')->unsigned()->nullable();
             $table->integer('yesTransfer')->unsigned()->default(0);
             $table->integer('noTransfer')->unsigned()->default(0);
             $table->boolean('offTransfer')->default(0);
@@ -25,8 +26,12 @@ class CreateTransfersTable extends Migration
             $table->timestamps();
 
             $table->foreign('player_id')
-                  ->references('id')
-                  ->on('players');
+                ->references('id')
+                ->on('players');
+
+            $table->foreign('session_id')
+                ->references('id')
+                ->on('sessions');
         });
     }
 

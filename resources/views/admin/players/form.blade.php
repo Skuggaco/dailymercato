@@ -20,6 +20,10 @@
         <small class="text-danger">{{ $errors->first('contractPlayer') }}</small>
     </div>
     <div class="form-group">
+        {!! Form::label('salaryPlayer', 'Salaire/an : ') !!}
+        {!! Form::text('salaryPlayer', null, ['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
         {!! Form::label('valuePlayer', 'Valeur marchande : ') !!}
         {!! Form::text('valuePlayer', null, ['class' => 'form-control']) !!}
         <small class="text-danger">{{ $errors->first('valuePlayer') }}</small>

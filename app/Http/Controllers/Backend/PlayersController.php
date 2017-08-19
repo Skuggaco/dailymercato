@@ -160,15 +160,15 @@ class PlayersController extends Controller
     }
 
     /**
-     * Delete a player
-     *
      * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id){
         $player = Player::findOrFail($id);
+        $player->teams()->detach();
         $player->delete();
         flash('Le joueur "'.$player['namePlayer'].' '.$player['surNamePlayer'].'" a été supprimée avec succès')->success();
-
+        return redirect()->action($this->redirectLink);
     }
 
     /**
@@ -213,6 +213,7 @@ class PlayersController extends Controller
         $player->twitterPlayer = $r['twitterPlayer'];
         $player->instagramPlayer = $r['instagramPlayer'];
         $player->snapchatPlayer = $r['snapchatPlayer'];
+        $player->salaryPlayer = $r['salaryPlayer'];
         $player->valuePlayer = $r['valuePlayer'];
         $player->valueVotePlayer = $r['valuePlayer'];
         $player->numberVotePlayer = 1;

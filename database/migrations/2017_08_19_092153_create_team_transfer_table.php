@@ -20,11 +20,12 @@ class CreateTeamTransferTable extends Migration
             $table->primary(['transfer_id', 'team_id']);
 
             $table->foreign('transfer_id')
-                  ->references('id')
-                  ->on('transfers');
+                ->references('id')
+                ->on('transfers');
+
             $table->foreign('team_id')
-                  ->references('id')
-                  ->on('teams');
+                ->references('id')
+                ->on('teams');
         });
     }
 

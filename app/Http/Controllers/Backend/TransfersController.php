@@ -9,6 +9,7 @@ use App\Models\Team;
 use App\Models\Transfer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class TransfersController extends Controller
 {
@@ -20,9 +21,23 @@ class TransfersController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(){
-        $transfers = Transfer::with(['teams', 'player'])
-                                ->orderBy('created_at', 'desc')
-                                ->paginate(20);
+        $sortBy = Input::get('sortBy');
+        $type = Input::get('type');
+        $transfers = Transfer::with(['teams', 'player', 'session']);
+
+        if($type == 'rumours'){
+            $transfers = $transfers->where('offTransfer', '=', 0);
+        } else{
+            $transfers = $transfers->where('offTransfer', '=', 1);
+        }
+
+        if($sortBy == 'currentSession'){
+            $transfers = $transfers->whereHas('session', function ($query) {
+                $query->where('on_going', '=', 1);
+            });
+        }
+        $transfers = $transfers->orderBy('created_at', 'desc')
+                               ->paginate(20);
         return view('admin.transfers.index', compact('transfers'));
     }
 

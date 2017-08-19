@@ -12,9 +12,12 @@ h1{ margin-top: 10px; }
 .btn-admin-add{ border-radius: 0px; margin-top: 10px; }
 .btn-delete{ border-radius: 0px; padding: 2px 5px 2px 5px; }
 
+.table tbody .action{ padding-bottom: 0px; padding-top: 6px; }
 .action form{ display: inline-block; margin-left: 5px; vertical-align: bottom; }
-.action i{ font-size: 20px; color: #304198; }
-
+.action i{ font-size: 30px; color: #4c4c4c; }
+.action a{ height: 30px; display: inline-block; }
+label{ vertical-align: middle; }
+.checkbox label{ padding-left: 5px; }
 .name-country img{ width: 22px; height: 15px; margin-top: -4px; margin-right: 5px; }
 
 .flag{ width: 22px; height: 15px; margin-right: 5px; }
@@ -38,6 +41,9 @@ div.alert{ margin-top: 10px; }
 .checkboxOnGoing, .cbox{ margin-top:0px; width: 21px; height: 22px; vertical-align: middle; }
 .hide-transfer, .hide-choose_team{ display: none; }
 
-.inactive{ background-color: rgba(255, 118, 86, 0.38); }
+body .table tbody .inactive{ background-color: rgba(255, 118, 86, 0.38); }
 .on_going{ background: rgba(0, 255, 54, 0.38); }
 .title-marg{ margin-left: 5px; }
+.select2{ width: 100%!important; }
+#label-winter{ margin-right: 20px; }
+#label-date{ margin-right: 5px; }

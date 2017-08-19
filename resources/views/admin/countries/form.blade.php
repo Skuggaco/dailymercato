@@ -9,7 +9,7 @@
         {!! Form::file('imgCountry', ['class' => 'form-control']) !!}
         <small class="text-danger">{{ $errors->first('imgCountry') }}</small>
         @if(isset($country->imgCountry) && ($country->imgCountry))
-        <img src="/storage/{{ $country->imgCountry }}" alt="" width="14px" height="19px">
+        <img src="/storage/{{ $country->imgCountry }}" class="flag">
         @endif
     </div>
 </div>

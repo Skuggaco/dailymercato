@@ -25,6 +25,7 @@ class Player extends Model
         'valuePlayer',
         'valueVotePlayer',
         'numberVotePlayer',
+        'salaryPlayer',
         'country_id',
         'position_id'
     ];

@@ -22,16 +22,25 @@ class CreatePlayersTable extends Migration
             $table->string('twitterPlayer')->nullable();
             $table->string('instagramPlayer')->nullable();
             $table->string('snapchatPlayer')->nullable();
+            $table->float('salaryPlayer')->unsigned()->nullable();
             $table->float('valuePlayer');
             $table->float('valueVotePlayer');
             $table->integer('numberVotePlayer');
             $table->string('slugPlayer');
+
             $table->integer('country_id')->unsigned();
+            $table->integer('position_id')->unsigned();
+
             $table->timestamps();
 
             $table->foreign('country_id')
                   ->references('id')
                   ->on('countries');
+
+            $table->foreign('position_id')
+                ->references('id')
+                ->on('positions');
+
         });
     }
 

@@ -7,6 +7,7 @@ use App\Models\League;
 use App\Models\Player;
 use App\Models\Team;
 use App\Http\Controllers\Controller;
+use App\Models\Transfer;
 
 class DashBoardController extends Controller
 {
@@ -20,7 +21,10 @@ class DashBoardController extends Controller
         $tab['nbrLeague'] = League::count('*');
         $tab['nbrTeam'] = Team::count('*');
         $tab['nbrPlayer'] = Player::count('*');
-
+        $tab['nbrRumour'] = Transfer::where('offTransfer', '=', 0)
+                                        ->count('*');
+        $tab['nbrOff'] = Transfer::where('offTransfer', '=', 1)
+                                        ->count('*');
         return view('admin.dashboard.index', compact('tab'));
     }
 }
