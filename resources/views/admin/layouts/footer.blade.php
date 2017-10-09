@@ -11,15 +11,15 @@
 
 
 <!-- jQuery 2.2.3 -->
-<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/libs/jquery.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->
 
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/libs/bootstrap.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('js/adminlte.min.js') }}"></script>
+<script src="{{ asset('js/admin/adminlte.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/icheck.min.js') }}"></script>
+<script src="{{ asset('js/admin/app.js') }}"></script>
+<script src="{{ asset('js/admin/icheck.min.js') }}"></script>
 
 </body>
 </html>

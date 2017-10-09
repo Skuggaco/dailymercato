@@ -17,8 +17,8 @@ class CreateTransfersTable extends Migration
             $table->increments('id');
             $table->integer('player_id')->unsigned();
             $table->integer('session_id')->unsigned()->nullable();
-            $table->integer('yesTransfer')->unsigned()->default(0);
-            $table->integer('noTransfer')->unsigned()->default(0);
+            $table->integer('yesTransfer')->default(0);
+            $table->integer('noTransfer')->default(0);
             $table->boolean('offTransfer')->default(0);
             $table->float('amountTransfer')->nullable();
             $table->string('linkTransfer')->nullable();

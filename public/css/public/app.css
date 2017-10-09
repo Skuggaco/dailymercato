@@ -1,0 +1,177 @@
+/**
+ ** GENERAL
+**/
+
+.centered{ text-align: center; }
+.c-pad{ padding-bottom: 50px; }
+strong{ font-weight: normal; }
+a{ color: #000; text-decoration: none; }
+a:hover{ color: #000; text-decoration: none; }
+.erreur{ color: red; }
+.nextTo p{ margin-left: 5px!important; }
+.nextTo p, .nextTo img{ display: inline-block; vertical-align: middle; margin:0; padding:0; }
+
+/**
+ ** HEADER
+**/
+.mobspe{  display: inline-block;  }
+.ouiPouceDiv{ color: green; }
+.nonPouceDiv{ color: red; }
+.ouiPouce, .nonPouce{ font-size: 10px!important; display: inline-block!important; margin-right: 4px;  }
+.row{ margin-bottom: 10px;  }
+.logoClub{   }
+.nopad{ padding-left: 0px; padding-right: 0px!important;  }
+.line-timer{ line-height: 63px!important; font-size: 11px; color: #666666;  }
+.logo{ font-size: 25px; }
+.table-center th, .table-center td{ text-align: left; }
+.table-center th{ padding-left: 19px!important;  }
+.vote{ position: relative; }
+.vote p{ display: inline-block; }
+.vote p strong{ font-weight: bold;  cursor: pointer; }
+.vote em{ font-style: normal;  }
+.table-center thead th{ background-color: #fff; color: #000; border:none!important; }
+.table-center tbody td{ height: 40px; line-height: 40px; }
+body .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th{ vertical-align: middle!important; padding:4px!important; font-weight: normal; }
+.table-center tr{  }
+.centered-th{ text-align: center!important;  }
+.table-center tbody tr{  }
+.leftY{ text-align: left; margin:0!important; }
+.rightY{ text-align: right; margin:0!important; }
+.table-center td, .table-center th{  }
+.pas em{ display: inline-block; background: #4ea64e; font-style: normal; color: #fff; border-radius: 22px; padding: 5px; font-weight: bold; font-size: 12px;  }
+.passpe em{ display: inline-block; background: #00aded; box-shadow: inset 0 0 9px rgba(49,79,119,0.5); font-style: normal; color: #fff; border-radius: 22px; padding: 5px 10px 5px 10px; font-weight: bold; font-size: 15px;  }
+a{ cursor: pointer;  }
+.npad{ padding-right: 0!important; padding-left: 5px!important; text-align: center;   }
+.pads{ padding-left: 13px!important; }
+.nopad{ padding-left: 0!important;  }
+.playerinfo div, .player p{ padding-left: 0!important; color:#000;  }
+.gras{ font-weight: bold;  }
+body h2{ color:#000;  }
+body .mon{ text-align: left!important; padding-left: 0px!important; }
+.playerinfo .list-group{ margin-bottom: 10px;  }
+body .activ{ color: #337ab7;  }
+body .btn-infospe{ font-size: 11px; cursor: pointer; padding: 0px 3px 0px 3px; margin-top: -5px; margin-left: 18px; background: rgba(0, 184, 255, 0.51); font-weight: bold; border: none; }
+/**
+ ** MAIN
+**/
+
+.lien{ cursor: pointer;  }
+.lien:hover{ color:  #337ab7; }
+.lp{ text-align: left; }
+.rp{ text-align: right; }
+.rp, .lp{ padding-right: 4px!important; padding-left: 4px!important; }
+body .spe-th{ padding-left: 8px!important;  }
+#result{ z-index: 1000; position: absolute; right: 15px; left: 15px; border-radius: 0px!important; top: 44px;  }
+#result .list-group-item:first-child{ border-radius: 0px; border-top: 0px;  }
+.hide-montant{ display: none;  }
+.title{ font-size: 14px; border-bottom: 1px dotted #ddd; margin: 0;  }
+.title strong{ display: inline-block; text-transform: none; background: #fff; color: #000; padding: 10px 5px 8px 0px; font-weight: bold; }
+body .table>tbody>tr>.none{ display: none; padding-top:8px!important; color: rgba(0,74,171,0.54); font-size: 12px;  }
+body .table>tbody>tr>.none_show{ display: block; padding-top:13px!important; color: rgba(0,74,171,0.54); font-size: 12px; }
+.title .pays{ display: inline-block; vertical-align: bottom; margin-left: 5px; margin-right: 5px; margin-bottom: 8px; }
+.playername p{ display: inline-block; vertical-align:middle; margin-right: 15px; }
+.playername{ margin-top: 0!important; margin-bottom: 0px; border-bottom: 1px dotted #ddd; }
+.display{ display: inline-block; vertical-align: top; margin-right: 5px; margin-bottom: 0;  }
+.chevron{ font-size: 11px!important;  }
+.voir{ height: 40px; background: #f9f9f9; line-height: 40px; font-size: 11px; color:#666; border-top: 1px solid #ddd;  }
+.table-center{ margin-bottom: 0px!important;  }
+.voir:hover{ background: rgba(0,65,183,0.12); cursor: pointer;  }
+.nomore{ cursor: default!important; display: none;  }
+.green{ color: green;  }
+.red{ color: red;  }
+.lil{ font-size: 12px; cursor: pointer; display: inline-block; vertical-align: bottom; margin-top: 5px;  margin-left: 10px; text-transform: none; background: #f9f9f9; border-radius: 14px; padding: 3px 10px 3px 10px; color:#917474; font-weight: normal;  }
+#linkSearch{ width: 100%; display: inline-block; height: 100%; padding: 10px 15px;  }
+#imgSearch{ display: inline-block; vertical-align: bottom; margin-right: 10px;  }
+.flag{ margin-bottom: 4px;  }
+.logo_club{ margin-bottom: 2px;  }
+#nameSearch{ display: inline-block; vertical-align: bottom; margin-top: 5px;  }
+.nopadd{ padding: 0px!important;  }
+body .valeur{ margin-left: -53px; background: #00aded; padding: 2px 10px 2px 10px!important; box-shadow: inset 0 0 50px rgba(49,79,119,0.5);  }
+body .valeur:hover{ background: #0cbafb;  }
+.valeur em{ font-weight: bold; font-style: normal; color: #fff; font-size: 20px;  }
+.valeur p{ margin-bottom: 0px; margin-top: -10px; }
+.valeur p strong{ font-weight: normal; font-size: 10px; color: #fff; font-style: italic;  }
+body .paddiv{ padding-left: 15px; padding-right: 15px;  }
+.bourselink{ padding-top: 11px; }
+.bourselink strong{ font-weight: normal; }
+body .inputbourse{ margin:0px 5px 0px 5px; vertical-align: bottom; border-radius: 0px; padding: 1px; width: 39px; border: 1px solid #e8e8e8; display: inline-block; height: 25px; transition: 0s border;  }
+body .inputbourse:focus{ border: 1px solid #65afe9; box-shadow: 0 0 0; transition: 0s border;  }
+body .chespe{ font-size: 15px; cursor: pointer;  }
+body .chespegreen{ color: green;  }
+body .chespered{ color: red;  }
+.million{ font-size: 12px; }
+.onlymob{  display: none; }
+/**
+ ** FOOTER
+**/
+
+footer{ background: black; color: #fff; text-align: left; font-size: 15px!important;    padding: 15px 0 20px 0; font-weight: normal;  }
+footer ul{ padding: 0; margin: 0; }
+.anniv ul li{ display: inline-block; vertical-align: top; margin-right: 10px; }
+.anniv ul li a{ color:#fff; }
+.anniv p{ text-transform: none; font-weight: bold; margin: 0;  }
+.anniv ul li p{ font-weight: normal; display: inline-block; vertical-align: middle; text-transform: none; }
+.anniv ul li .pad{ padding-top: 4px;  }
+.copyright{ font-weight: bold; margin-top: 10px;   }
+.nav-foot p{ margin-bottom: 4px;  }
+.nav-foot ul li{ margin-right:0px;  }
+/**
+ ** ADMIN
+**/
+.action{ text-align: left; }
+.glyphicon{ font-size: 18px;  }
+.glyphicon-special{ font-size: 15px!important; top:4px!important;  }
+.glyphicon-plus{ color: green; }
+.glyphicon-remove{ color: red; }
+.glyphicon-edit{ color: blue; }
+.toTheRight{ float: right;}
+
+.adminsearch .stylish-input-group{
+    margin-top: 10px;
+}
+.adminsearch .stylish-input-group input{ background: #fff; color: #000;  box-shadow: none; transition: 0s border; height: 30px; border: 1px solid #e8e8e8;
+    line-height: 30px; border-right: none;  }
+.adminsearch .stylish-input-group .input-group-addon{
+    background: #fff !important;
+    border-color: #e8e8e8;
+    border-radius: 0px;
+    color:#cacaca;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.adminsearch .stylish-input-group .form-control{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+
+}
+.adminsearch .stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.adminsearch #result2{ z-index: 1000; position: absolute; right: 15px; left: 15px; border-radius: 0px!important; top: 40px;  }
+.adminsearch #result2 .list-group-item:first-child{ border-radius: 0px; border-top: 0px;  }
+.adminsearch .linkAdmin{ color: #000!important; text-decoration: none!important;  }
+
+.glyspe{ font-size: 12px; margin-right: 5px; }
+.pubbourse{ margin-top: 10px; background: #00aded; box-shadow: inset 0 0 25px rgba(49,79,119,0.5); text-align: center; height: 40px; line-height: 40px;   }
+.pubbourse a{ color: #fff; display: block; width: 100%;  }
+.pubbourse a:hover{ color: #fff; }
+.pubbourse:hover{ background: #0cbafb; }
+#chart{ margin-right: 5px; }
+.rankdis{ display: inline-block;  }
+
+body .premier-league:nth-child(1) { display: block!important; background: red; }
+.adminUp, .adminDown{ font-size: 12px; text-align: right;  }
+.adminUpDown{ float: right;  }
+.list-league{ display: none;  }
+.ajaxIn{ cursor: pointer;  }
+
+.logoflag{ width: 19px; height: 12.5px; }
+.logoflagbig{ width: 22px; height: 15px; }
+.logoclub{ width: 14px; height:18px; }
+.nextTo-logo{ display: inline-block; vertical-align: bottom; margin-left: 3px; }
+.table-left{ float: left; color: #666; }
+.table-right{ float:right; }

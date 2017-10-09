@@ -6,6 +6,18 @@
     <li @if(Route::current()->getName() == '') class="active" @endif>
         <a href="{{ action('Backend\DashBoardController@index') }}"><i class="fa fa-dashboard"></i> <span>Tableau de bord</span></a>
     </li>
+    <li @if(strtok(Route::current()->getName(), '.') == 'aptitudes') class="active treeview" @else class="treeview" @endif>
+        <a href="{{ action('Backend\TransfersController@index', ['type' => 'rumours']) }}">
+            <i class="fa fa-briefcase"></i>
+            <span>Utilisateurs</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{{ action('Backend\AbilitiesController@index') }}">Aptitudes</a></li>
+        </ul>
+    </li>
     <li @if(strtok(Route::current()->getName(), '.') == 'transferts') class="active treeview" @else class="treeview" @endif>
         <a href="{{ action('Backend\TransfersController@index') }}">
             <i class="fa fa-exchange"></i>

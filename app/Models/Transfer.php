@@ -17,6 +17,8 @@ class Transfer extends Model
         'session_id',
     ];
 
+    protected $appends = ['treat_amount'];
+
     public function teams(){
         return $this->belongsToMany('App\Models\Team', 'team_transfer', 'transfer_id', 'team_id')
                     ->withPivot('left');

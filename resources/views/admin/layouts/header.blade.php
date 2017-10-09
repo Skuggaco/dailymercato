@@ -8,15 +8,14 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="{{ asset('css/libs/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/libs/font-awesome.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/skin-blue.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/_all-skins.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/all-check-skins.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/_all-skins.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/all-check-skins.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
 
 
     <!--[if lt IE 9]>
@@ -94,10 +93,13 @@
                                     <a href="#" class="btn btn-default btn-flat">Profil</a>
                                 </div>-->
                                 <div class="text-center">
-                                    <a href="{{ action('Auth\LoginController@logout') }}" data-method="post" data-token="{{csrf_token()}}" class="btn btn-default btn-flat">
+                                    <a href="#logout" onclick="$('#logout').submit();" class="btn btn-default btn-flat">
                                         Se déconnecter
                                     </a>
                                 </div>
+                                {!! Form::open(['route' => 'logout', 'style' => 'display:none;', 'id' => 'logout']) !!}
+                                    <button type="submit"></button>
+                                {!! Form::close() !!}
                             </li>
                         </ul>
                     </li>

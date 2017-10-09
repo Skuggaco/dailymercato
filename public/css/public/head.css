@@ -1,0 +1,228 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+    font-family: Helvetica;
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+footer {
+    padding: 30px 0;
+}
+.plusgros{ font-size: 17px;  }
+.navbar-nav li a{ color: #fff!important; }
+#inputsearch{  }
+.c-header{     padding-right: 0; position: relative;  }
+.navbar-nav li{ font-weight: bold; text-transform: uppercase;  }
+.logo{ padding-top: 11px;  }
+.navbar-inverse{ background: #fff!important; border-radius: 0; box-shadow: 0 4px 2px -2px #e8e8e8;  height: 55px; border: none;  }
+.stylish-input-group{
+    margin-top: 14px;
+}
+.stylish-input-group input{ background: #fff; color: #000;  box-shadow: none; transition: 0s border; height: 30px; border: 1px solid #e8e8e8;
+    line-height: 30px; border-right: none;  }
+.stylish-input-group .input-group-addon{
+    background: #fff !important;
+    border-color: #e8e8e8;
+    border-radius: 0px;
+    color:#cacaca;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.stylish-input-group .form-control{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.navbar-header{ position: absolute;
+    top: -4px;
+    left: 29px;  }
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 1200px){
+    body .valeur{ margin-left: 0;  }
+}
+
+@media screen and (max-width: 991px){
+    #sidebar{ display: none; }
+    .custom-nav{ display: none!important; }
+    .tab-rank{ margin-top: 4px; padding-left: 0px; padding-right: 0px;  }
+    .nopad{ padding-right: 0px;  }
+    .hide_mob{ display: none;  }
+    .container{ width: 100%;  }
+    .line-timer{ padding-left: 0;  }
+    .playerinfo *{ text-align: left; }
+    .playerinfo p{ margin-bottom: 5px;  }
+    .logoclub{ width: 21px!important; height:27px!important;  }
+    .playername{ margin-bottom: 0; margin-top: 5px!important; }
+    #result{ top:30px;  }
+    body .valeur{ margin-left: 0px; text-align: center; }
+    body .valeur p{ text-align: center; }
+    .onlydesk{ display: none;  }
+    .onlymob{ display: block;  }
+}
+
+@media screen and (max-width: 767px) {
+    .rp, .lp{ text-align: center; }
+    .pubbourse a{ font-size: 12px;  }
+    body .btn-infospe{ margin-left: 0; margin-top: 5px; width: 35px; height: 20px; line-height: 20px;  }
+    .rso{ display: none; }
+    body .table>tbody>tr>#padtop{ padding-top: 13px!important; }
+    .text{ font-size: 12px;  }
+    .playerinfo, .playerinfo div{ padding-right: 0px;  }
+    body .playermob ul{ width: 100%;  }
+    body .playermob ul li{ padding-left: 10px; padding-right: 10px;  }
+    #table-09 .logoCountry{ display: none;  }
+    footer{ padding: 20px 0;  }
+    footer .container{ padding: 0px!important; }
+    .copyright{ border-top: 1px dotted #fff; padding-top: 5px;  }
+    .anniv{ margin-bottom: 10px; }
+    body table .vote, .rp{ padding-left: 0px!important;  }
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all .25s ease-out;
+        -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+    body .marpadmob{ margin-top: 6px; padding-left: 7px;  }
+    #table-09 .col-lg-1, #table-09 .col-lg-10, #table-09 .col-lg-11, #table-09 .col-lg-12, #table-09 .col-lg-2, #table-09 .col-lg-3, #table-09 .col-lg-4, #table-09 .col-lg-5, #table-09 .col-lg-6, #table-09 .col-lg-7, #table-09 .col-lg-8, #table-09 .col-lg-9, #table-09 .col-md-1, #table-09 .col-md-10, #table-09 .col-md-11, #table-09 .col-md-12, #table-09 .col-md-2, #table-09 .col-md-3, #table-09 .col-md-4, #table-09 .col-md-5, #table-09 .col-md-6, #table-09 .col-md-7, #table-09 .col-md-8, #table-09 .col-md-9, #table-09 .col-sm-1, #table-09 .col-sm-10, #table-09 .col-sm-11, #table-09 .col-sm-12, #table-09 .col-sm-2, #table-09 .col-sm-3, #table-09 .col-sm-4, #table-09 .col-sm-5, #table-09 .col-sm-6, #table-09 .col-sm-7, #table-09 .col-sm-8, #table-09 .col-sm-9, #table-09 .col-xs-1, #table-09 .col-xs-10, #table-09 .col-xs-11, #table-09 .col-xs-12, #table-09 .col-xs-2, #table-09 .col-xs-3,  #table-09 .col-xs-4, #table-09 .col-xs-5, #table-09 .col-xs-6, #table-09 .col-xs-7, #table-09 .col-xs-8, #table-09 .col-xs-9 { padding-right: 0px!important; }
+    .rankdis a{ margin-top: 5px; }
+    body .table>tbody>tr>td{ padding-left: 0px!important; padding-right: 0px!important;  }
+    .playername p{ margin-bottom: 6px;  }
+    body .table{ font-size: 12px!important;  }
+    .title .pays{ margin-bottom: 0; }
+    .title{ padding-bottom: 5px;  }
+    .title strong{ padding-bottom: 0px; }
+    .mobspe strong{ padding-top: 0px;  }
+    .mobspe{ display: block; padding-bottom: 0px;   }
+    .mobspe span:first-child{ margin-left: 0px; margin-top: 5px;  }
+    .mobsp{ padding-left: 15px!important; padding-right: 0px!important; }
+    .votemob{ font-size: 8px!important;  }
+    .ouiPouce, .nonPouce{ font-size: 7px!important;  }
+    .oui, .non{ font-size: 10px!important; padding-bottom: 3px;  }
+    .ouiPouceDiv, .nonPouceDiv{ text-align: center;  font-size: 8px!important; padding-left: 0px!important;}
+    body .table>tbody>tr>.none_show{ padding-top: 8px!important;  }
+    .navbar{ margin-bottom: 0px;  }
+    .passpe{ font-size: 10px; }
+    .million{  display: none; }
+    .onlydesk{ display: none;  }
+    .onlymob{ display: block;  }
+    .plus-sign, .minus-sign{ display: none;  }
+    body .inputbourse{ font-size: 12px; width: 35px; height: 20px; }
+    .activ{ background: #adb9ff; color: #fff!important;  }
+    .row-offcanvas-right {
+
+        right: 0;
+    }
+
+    .row-offcanvas-left {
+        left: 0;
+    }
+
+    .row-offcanvas-right
+    .sidebar-offcanvas {
+        right: -50%; /* 6 columns */
+    }
+
+    .row-offcanvas-left
+    .sidebar-offcanvas {
+        left: -50%; /* 6 columns */
+    }
+
+    .row-offcanvas-right.active {
+        right: 50%; /* 6 columns */
+    }
+
+    .row-offcanvas-left.active {
+        left: 50%; /* 6 columns */
+    }
+
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 50%; /* 6 columns */
+    }
+    .articles h2{  font-size: 16px;  }
+    .articles{ padding-left: 0;  }
+    .clubpart{ padding-left: 5px;  }
+    .border{ padding-left: 0; padding-right: 0;  }
+}
+
+.custom-nav{ position: absolute; top: 4px; right: 22px;  }
+.custom-nav li a{
+    padding-right:8px;
+    padding-left: 8px;
+    color: #666!important;
+    font-size: 16px;
+}
+.posre{ position: relative; }
+.custom-nav li a:hover{
+    color: #2b2b2b!important;
+}
+.imgp{     margin-bottom: 15px;  }
+.clubpart{ text-align: center; margin-bottom: -99999px;    padding-bottom: 99999px; }
+.articles h2{ margin-top:0;    margin-bottom: 15px; }
+.articles{ margin-bottom: 13px; overflow: hidden;   }
+.border{ padding-right: 0px;   margin-bottom: -99999px;   padding-bottom: 99999px; }
+.border .text{  border-bottom: 1px dotted #ccc; padding-bottom: 15px; font-family: Helvetica; font-weight:300; font-size: 15px; }
+.border p{   }
+.clubpart::after{ content:'';     border-left: 3px solid rgba(141, 148, 156, 0.15); padding-bottom: 99999px; }
+.c-main{ margin-bottom: 20px;  }
+
+
+#sidebar{   text-align: center; margin-left: -24px; top: 10px;}
+h2{ font-family: Helvetica, sans-serif; text-transform: none; font-weight: 700; font-size: 21px; line-height: 23px; }
+.articles p{ font-family: Helvetica, sans-serif; line-height: 26px; }
+.heure{     font-weight: 600;    font-size: 13px;  color: #666;  margin-bottom: 0;  }
+.tf{ text-transform: uppercase;    position: absolute;
+    top: 22px;
+    left: 100px; font-family: Helvetica;     font-weight: 600;
+    font-size: 12px; color: #999999;  }
+.tf::before{ content: ''; width: 15px; height: 15px; background: #0783d2; border: 2px solid #ced0d1;     margin-right: 6px;
+    border-radius: 3px; vertical-align: top; display: inline-block;  }
+
+#affich:hover #acacher{ display: block; }
+#acacher, #affich:hover{ display: none;  }
+
+#inputsearch input:focus ~ .input-group-addon{
+    border-top: 1px solid #65afe9;
+    border-right: 1px solid #65afe9;
+    border-bottom: 1px solid #65afe9;
+}
+
+#inputsearch input:focus{
+    transition: 0s border;
+    border-top: 1px solid #65afe9;
+    border-left: 1px solid #65afe9;
+    border-bottom: 1px solid #65afe9;
+    border-right: none;
+    box-shadow: 0 0 0;
+}
+a{ color: #000; text-decoration: none; }
+a:hover{ color: #0783d2; text-decoration: none;  }
+.buzz-article{ text-align: center;  }
+.buzz-article p{ margin-bottom: 0;  }
+.buzz-article h2{ margin-top: 4px; line-height: 17px; text-align: left; margin-left: 15px; color: #000; font-size:16px; }
+.logobuzz{ text-align: center;  }
+#w{ padding-left: 5px; padding-right: 5px; }
+.buzz{ padding-top: 12px; padding-bottom: 10px; background: #efefef; border-top: 4px solid #000;  }
+img:hover{ opacity: 0.9;  }
+.logoclub{ cursor: pointer;  }
+
+.pluslus div{ margin: 0; padding-left: 1px; }
+.pluslus .titre{ line-height: 18px; padding-left: 4px;  }
+.pluslus h2{ color: #000;  }
+.pluslus .titre a{ font-family: Helvetica, sans-serif; text-transform: none; font-weight: 700; font-size: 15px; }
+
+

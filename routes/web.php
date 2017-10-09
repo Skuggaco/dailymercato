@@ -11,9 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Routes for the front side
+ */
+
+Route::get('/', 'Frontend\MainController@index');
+Route::get('/joueur/{slug}', 'Frontend\PlayersController@index');
+Route::get('/club/{slug}', 'Frontend\TeamsController@index');
+
+/**
+ * Routes for the tabs
+ */
+
+Route::get('/transferts-plus-chauds/{league?}', 'Frontend\TabsController@hottestTab');
+Route::get('/classement-des-plus-gros-transferts/{league?}', 'Frontend\TabsController@officialRankTab');
+
+/**
+ * Routes for the votes
+ */
+
+Route::get('/voter', 'Frontend\AjaxController@votingRumours');
+
+/**
+ * Routes for the admin panel
+ */
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Backend'], function(){
     Route::get('/', 'DashBoardController@index');
@@ -29,7 +50,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Bac
     Route::delete('ancienne-equipe/{team_id}/{player_id}', 'TeamPlayerController@destroy');
     Route::resource('transferts', 'TransfersController');
     Route::resource('sessions', 'SessionsController');
+    Route::resource('aptitudes', 'AbilitiesController');
 });
+
+
+/**
+ * Routes for the authentification
+ */
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

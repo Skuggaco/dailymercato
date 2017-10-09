@@ -6,7 +6,7 @@
             <td>
                 <a href="{{ action('Backend\TeamsController@show', $t->slugTeam) }}">
                     <img src="/storage/{{ $t->imgTeam }}" alt="" class="logo">
-                    {{ $t->nameLongTeam }} ({{ $t->nameTeam }})
+                    {{ $t->nameTeam }}
                 </a>
             </td>
             @include ('admin.partials.action', ['controller' => 'TeamsController', 'id' => $t->id])

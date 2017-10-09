@@ -36,7 +36,7 @@ class TransfersController extends Controller
                 $query->where('on_going', '=', 1);
             });
         }
-        $transfers = $transfers->orderBy('created_at', 'desc')
+        $transfers = $transfers->orderBy('updated_at', 'desc')
                                ->paginate(20);
         return view('admin.transfers.index', compact('transfers'));
     }

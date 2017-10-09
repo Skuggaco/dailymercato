@@ -26,7 +26,7 @@
                                 <img src="/storage/{{ $t->imgTeam }}" class="logo">
                             @endif
                             <a href="{{ action('Backend\TeamsController@show', $t->slugTeam) }}">
-                                {{ $t->getFullNameTeamAttribute() }}
+                                {{ $t->nameTeam }}
                             </a>
                         </td>
                         <td></td>

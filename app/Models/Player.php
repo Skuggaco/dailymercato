@@ -37,6 +37,8 @@ class Player extends Model
         'updated_at'
     ];
 
+    protected $appends = ['full_name'];
+
     public function sluggable()
     {
         return [
@@ -58,6 +60,26 @@ class Player extends Model
     public function getBirthdayPlayerAttribute()
     {
         return Carbon::parse($this->attributes['birthdayPlayer'])->format('Y-m-d');
+    }
+
+    public function getBirthdayPlayerFormatAttribute(){
+        return Carbon::parse($this->attributes['birthdayPlayer'])->format('d/m/Y');
+    }
+
+    public function getAgePlayerAttribute(){
+        return Carbon::parse($this->attributes['birthdayPlayer'])->age;
+    }
+    
+    public function getCurrentTeamAttribute(){
+        foreach($this->teams as $t){
+            if($t->pivot->activity == 1){
+                return $t;
+            }
+        }
+    }
+
+    public function getContractPlayerFormatAttribute(){
+        return Carbon::parse($this->attributes['birthdayPlayer'])->format('d/m/Y');
     }
 
     public function teams()
